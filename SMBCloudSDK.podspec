@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name     = 'SMBCloudSDK'
-  s.version  = '5.13.4'
+  s.version  = '2.0.7'
   s.license  = 'MIT'
   s.summary  = 'TP-LINK商用云SDK'
   s.homepage = 'https://github.com/bilinxian/SMBCloudSDK-iOS'
