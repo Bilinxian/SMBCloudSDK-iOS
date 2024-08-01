@@ -1,0 +1,6 @@
+framework module SMBCloudSDK {
+  umbrella header "SMBCloudSDK.h"
+  export *
+
+  module * { export * }
+}
