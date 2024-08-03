@@ -32,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief 初始化方法（推荐使用）
- * @param device设备对象，若传入为NVR通道，会以parentQrCode/parentMac来构造参数。
+ * device 设备对象，若传入为NVR通道，会以parentQrCode/parentMac来构造参数。
  */
 - (instancetype)initWithDevice:(SMBCloudSDKDevice *)device;
 

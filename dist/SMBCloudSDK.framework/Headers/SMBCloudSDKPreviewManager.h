@@ -157,11 +157,9 @@ typedef void (^SMBCloudSDKPreviewManualAlarmCallback)(NSInteger countdown, __kin
 /**
  * @brief 云台转动
  *
- * @param direction: 云台转动的方向
- * @see SMBCloudSDKPtzRotateDirection
- * @param speed 云台转动的速度
- * @see SMBCloudSDKPtzSpeed
- * @param callback 结果回调，参数：1. 请求错误信息
+ * @ddirection 云台转动的方向
+ * speed  云台转动的速度
+ * callback 结果回调，参数：1. 请求错误信息
  *
  */
 - (void)reqPtzRotateByDirection:(SMBCloudSDKPtzRotateDirection)direction
@@ -302,9 +300,7 @@ typedef void (^SMBCloudSDKPreviewManualAlarmCallback)(NSInteger countdown, __kin
 /**
  * @brief 通过设备参数识别设备，获取镜头镜像、画面旋转状态
  *
- * @param deviceParam 设备参数
- * @see SMBCloudSDKDeviceParam
- * @param callback 结果回调，参数：1. 镜头镜像状态，若请求失败，该值为SMBCloudSDKScreenFlipTypeClose；2. 画面旋转状态，若请求失败，该值为SMBCloudSDKScreenRotateTypeClose；3. 请求错误信息
+ * callback 结果回调，参数：1. 镜头镜像状态，若请求失败，该值为SMBCloudSDKScreenFlipTypeClose；2. 画面旋转状态，若请求失败，该值为SMBCloudSDKScreenRotateTypeClose；3. 请求错误信息
  *
  */
 - (void)reqGetSwitchTypeWithCallback:(SMBCloudSDKPreviewManagerSwitchTypeCallback)callback;
@@ -312,13 +308,13 @@ typedef void (^SMBCloudSDKPreviewManualAlarmCallback)(NSInteger countdown, __kin
 /**
  * @brief 通过设备参数识别设备，设置镜头镜像、画面旋转状态
  *
- * @param deviceParam 设备参数
- * @see SMBCloudSDKDeviceParam
- * @param flipType 镜头镜像状态
- * @see SMBCloudSDKScreenFlipType
- * @param rotateType 画面旋转状态
- * @see SMBCloudSDKScreenRotateType
- * @param callback 结果回调，参数：1. 请求错误信息
+ * deviceParam 设备参数
+ * see SMBCloudSDKDeviceParam
+ * flipType 镜头镜像状态
+ * see SMBCloudSDKScreenFlipType
+ * @params rotateType  画面旋转状态
+ * see SMBCloudSDKScreenRotateType
+ * callback 结果回调，参数：1. 请求错误信息
  *
  */
 - (void)reqSetSwitchTypeWithFlipType:(SMBCloudSDKScreenFlipType)flipType
@@ -383,21 +379,21 @@ typedef void (^SMBCloudSDKPreviewManualAlarmCallback)(NSInteger countdown, __kin
 
 
 /**
- * @brief 设置麦克风音量
- * @discussion 麦克风能力集中的isSupportVolume为true才支持
- * @see SMBCloudSDKMicrophoneCapability
- * @param volume: 麦克风音量，范围为0-100
- * @param callback 结果回调，参数：1. 请求错误信息
+ * brief 设置麦克风音量
+ * discussion 麦克风能力集中的isSupportVolume为true才支持
+ * see SMBCloudSDKMicrophoneCapability
+ * volume  麦克风音量，范围为0-100
+ * @params callback 结果回调，参数：1. 请求错误信息
  *
  */
 - (void)reqSetMicrophoneConfigWithVolume:(NSInteger)volume
                                 callback:(SMBCloudSDKPreviewManagerCallback)callback;
 
 /**
- * @brief 设置麦克风静音状态
- * @discussion 麦克风能力集中的isSupportMute为true才支持
- * @see SMBCloudSDKMicrophoneCapability
- * @param mute: 是否开启静音：YES开启，NO关闭
+ * brief 设置麦克风静音状态
+ * discussion 麦克风能力集中的isSupportMute为true才支持
+ * see SMBCloudSDKMicrophoneCapability
+ * mute: 是否开启静音：YES开启，NO关闭
  * @param callback 结果回调，参数：1. 请求错误信息
  *
  */
@@ -405,11 +401,11 @@ typedef void (^SMBCloudSDKPreviewManualAlarmCallback)(NSInteger countdown, __kin
                               callback:(SMBCloudSDKPreviewManagerCallback)callback;
 
 /**
- * @brief 设置麦克风的噪音消除状态
- * @discussion 麦克风能力集中的isSupportNoiseCancelling为true才支持
- * @see SMBCloudSDKMicrophoneCapability
- * @param noiseCancelling: 是否开启噪音消除：YES开启，NO关闭
- * @param callback 结果回调，参数：1. 请求错误信息
+ * brief 设置麦克风的噪音消除状态
+ * discussion 麦克风能力集中的isSupportNoiseCancelling为true才支持
+ * see SMBCloudSDKMicrophoneCapability
+ * param noiseCancelling: 是否开启噪音消除：YES开启，NO关闭
+ * callback 结果回调，参数：1. 请求错误信息
  *
  */
 - (void)reqSetMicrophoneConfigWithNoiseCancelling:(BOOL)isNoiseCancellingOn
@@ -419,8 +415,8 @@ typedef void (^SMBCloudSDKPreviewManualAlarmCallback)(NSInteger countdown, __kin
  * @brief 设置麦克风的回声抑制状态
  * @discussion 麦克风能力集中的isSupportEchoCancelling为true才支持
  * @see SMBCloudSDKMicrophoneCapability
- * @param echoCancelling: 是否开启回声抑制：YES开启，NO关闭
- * @param callback 结果回调，参数：1. 请求错误信息
+ * param echoCancelling: 是否开启回声抑制：YES开启，NO关闭
+ * callback 结果回调，参数：1. 请求错误信息
  *
  */
 - (void)reqSetMicrophoneConfigWithEchoCancelling:(BOOL)isEchoCancellingOn
@@ -452,8 +448,8 @@ typedef void (^SMBCloudSDKPreviewManualAlarmCallback)(NSInteger countdown, __kin
  * @brief 设置扬声器音量
  * @discussion 扬声器能力集中的isSupportVolume为true时才支持
  * @see SMBCloudSDKSpeakerCapability
- * @param volume: 扬声器音量，范围在0-100
- * @param callback 结果回调，参数：1. 请求错误信息
+ * param volume: 扬声器音量，范围在0-100
+ * callback 结果回调，参数：1. 请求错误信息
  *
  */
 - (void)reqSetSpeakerConfigWithVolume:(NSInteger)volume
@@ -463,8 +459,8 @@ typedef void (^SMBCloudSDKPreviewManualAlarmCallback)(NSInteger countdown, __kin
  * @brief 设置扬声器静音
  * @discussion 扬声器能力集中的isSupportMute为true时才支持
  * @see SMBCloudSDKSpeakerCapability
- * @param mute: 扬声器静音状态，YES为打开，NO为关闭
- * @param callback 结果回调，参数：1. 请求错误信息
+ * param mute: 扬声器静音状态，YES为打开，NO为关闭
+ * callback 结果回调，参数：1. 请求错误信息
  *
  */
 - (void)reqSetSpeakerConfigWithMute:(BOOL)isMuteOn
@@ -474,10 +470,10 @@ typedef void (^SMBCloudSDKPreviewManualAlarmCallback)(NSInteger countdown, __kin
  * @brief 设置扬声器输出设备类型
  * @discussion 扬声器能力集的supportedOutputDeviceTypes不为.unsupport，或扬声器能力集的isSupportAllOutputDeviceTypes为true
  * @see SMBCloudSDKSpeakerCapability
- * @param outputDeviceType: 输出设备类型
- * @discussion 必须包含在扬声器能力集的supportedOutputDeviceTypes中，或扬声器能力集的isSupportAllOutputDeviceTypes为true
- * @see SMBCloudSDKSpeakerOutputDeviceType
- * @param callback 结果回调，参数：1. 请求错误信息
+ * param outputDeviceType: 输出设备类型
+ * discussion 必须包含在扬声器能力集的supportedOutputDeviceTypes中，或扬声器能力集的isSupportAllOutputDeviceTypes为true
+ * see SMBCloudSDKSpeakerOutputDeviceType
+ * callback 结果回调，参数：1. 请求错误信息
  *
  */
 - (void)reqSetSpeakerConfigWithOutputDeviceType:(SMBCloudSDKSpeakerOutputDeviceType)outputDeviceType

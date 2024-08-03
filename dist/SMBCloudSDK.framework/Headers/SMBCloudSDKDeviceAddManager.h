@@ -60,7 +60,7 @@ NS_SWIFT_NAME(requestSmartConfigDevice(qrCode:ssid:password:));
  * @param version            声波版本
  * @param qrCode           设备二维码
  *
- * @return SMBCloudSDKAudioConfigInfo 声波内容
+ * SMBCloudSDKAudioConfigInfo 声波内容
  */
 - (void)playAudioConfigWithSSID:(NSString *)ssid
                        password:(NSString *)password
@@ -109,7 +109,7 @@ NS_SWIFT_NAME(requestSendWiFiInfo(ip:port:deviceType:info:completion:));
 /**
  * @brief SoftAP流程查询设备配网连接状态（仅当requestSendWiFiInfoWithIP接口回调中的isSupportAp为true时才可调用）
  *
- * @param IP          设备IP
+ * IP          设备IP
  * @param port          设备端口
  * @param completion        请求结果回调（SMBCloudSDKError，连接状态）
  *
@@ -224,7 +224,7 @@ NS_SWIFT_NAME(requestGetNotAddedIPCListByNVR(nvrParam:completion:));
  * @param nvrParam NVR设备参数
  * @see SMBCloudSDKDeviceParam
  * @param activatePassword 激活密码。当该参数非空时，ipcList中的IPC都得是支持激活但未激活的设备
- * @param ipcList. IPC列表
+ * @param ipcList IPC列表
  * @param completion 请求结束后回调，参数：1.请求错误信息 2.失败列表
  * @see SMBCloudSDKIPCToAddParam
  */
